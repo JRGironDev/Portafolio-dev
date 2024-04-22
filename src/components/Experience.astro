@@ -1,0 +1,34 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+
+const EXPERIENCE = [
+    {
+        title: 'Senior Frontend Developer',
+        date: 'Jan 2020',
+        description: 'Present',
+        link: 'Lead the frontend team to build and maintain the company\'s main product, a design system and UI kit for Tailwind CSS.'
+    },
+    {
+        title: 'Frontend Developer',
+        date: 'Jan 2018',
+        description: 'Dec 2019',
+    },
+    {
+        title: 'Junior Frontend Developer',
+        date: 'Jan 2017',
+        description: 'Dec 2018',
+    }
+]
+---
+
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700">   
+    {
+        EXPERIENCE.map(experience => (
+            <li class="mb-10 ms-6">
+                <ExperienceItem {...experience} />
+            </li>
+        ))
+    }               
+</ol>
+

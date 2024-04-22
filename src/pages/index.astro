@@ -5,17 +5,20 @@ import LinkedInIcon from '../components/icons/LinkedIn.astro';
 import GitHubIcon from '../components/icons/GitHub.astro';
 import SocialPill from '../components/SocialPill.astro';
 import MailIcon from '../components/icons/Mail.astro';
+import Experience from '../components/Experience.astro';
+import SectionContainer from '../components/SectionContainer.astro';
+import CodeIcon from '../components/icons/Code.astro';
 ---
 
 <Layout 
 	title="Portafolio de José - Desarrollador y Programador Web y Móvil con más de 4 años de experiencia"
 	description="Portafolio de José para poder contactarme y comenzar una relación laboral">
 	<main>
-		<section class="w-full lg:w-[740px] mx-auto py-44">
+		<SectionContainer class="pt-44 pb-24">
 			<img
-			class="rounded-full w-12 h-12 mb-8" 
-			src="Jose.png" 
-			alt="photo">
+				class="rounded-full w-12 h-12 mb-8" 
+				src="Jose.png" 
+				alt="photo">
 
 			<h1 class="text-white text-5xl font-bold flex gap-x-4 pb-8">
 				¡Hola! 👋 Soy José 
@@ -37,20 +40,28 @@ import MailIcon from '../components/icons/Mail.astro';
 
 			<nav class="flex gap-x-4 mt-4">
 				<SocialPill href="https://www.linkedin.com/in/jose-rolando-giron-ramirez/">
-					<LinkedInIcon class="w-6 h-6 text-white" />
+					<LinkedInIcon class="size-6 text-white" />
 					LinkedIn
 				</SocialPill>
 
 				<SocialPill href="https://github.com/JRGironDev">
-					<GitHubIcon class="w-6 h-6 text-white" />
+					<GitHubIcon class="size-6 text-white" />
 					GitHub
 				</SocialPill>
 
 				<SocialPill href="https://github.com/JRGironDev">
-					<MailIcon class="w-6 h-6 text-white" />
+					<MailIcon class="size-6 text-white" />
 					joserobertoq@outlook.com
 				</SocialPill>
 			</nav>
-		</section>
+		</SectionContainer>
+
+		<SectionContainer id="experiencia">
+			<h2 class="text-2xl font-semibold mb-8 text-white flex gap-x-3 items-center">
+				<CodeIcon class="size-8" />
+				Experiencia Laboral
+			</h2>
+			<Experience />
+		</SectionContainer>
 	</main>
 </Layout>
