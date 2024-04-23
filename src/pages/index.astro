@@ -8,20 +8,22 @@ import MailIcon from '../components/icons/Mail.astro';
 import Experience from '../components/Experience.astro';
 import SectionContainer from '../components/SectionContainer.astro';
 import CodeIcon from '../components/icons/Code.astro';
+import BriefCaseIcon from '../components/icons/Briefcase.astro';
+import Projects from '../components/Projects.astro';
 ---
 
 <Layout 
 	title="Portafolio de José - Desarrollador y Programador Web y Móvil con más de 4 años de experiencia"
 	description="Portafolio de José para poder contactarme y comenzar una relación laboral">
-	<main>
-		<SectionContainer class="pt-44 pb-24">
+	<main class="px-4">
+		<SectionContainer class="pt-32 md:pt-44 pb-24">
 			<img
 				class="rounded-full w-12 h-12 mb-8" 
 				src="Jose.png" 
 				alt="photo">
-
-			<h1 class="text-white text-5xl font-bold flex gap-x-4 pb-8">
-				¡Hola! 👋 Soy José 
+				
+			<h1 class="text-white text-xl md:text-3xl lg:text-5xl font-bold pb-6 md:pb-8 flex gap-x-2 md:gap-x-4">
+				¡Hola! Soy José 👋 
 				<a 
 					class="flex justify-center items-center"
 					href="https://github.com/JRGironDev"
@@ -30,7 +32,8 @@ import CodeIcon from '../components/icons/Code.astro';
 					<Badge>Disponible para trabajar</Badge>
 				</a>
 			</h1>
-			<h2 class="text-white txt-3xl text-wrap">
+
+			<h2 class="text-white text-lg lg:text-2xl text-wrap max-w-[900px]">
 				<span>+4 años de experiencia.</span>
 				<span class="text-violet-400/90">Desarrollador Web y Móvil.</span>
 				<span class="text-blue-200/90">De Guatemala 🇬🇹.</span>
@@ -38,19 +41,19 @@ import CodeIcon from '../components/icons/Code.astro';
 				<span class="opacity-75">Me dedico a crear aplicaciones que no solo son funcionales, sino también visualmente atractivas y fáciles de usar. Mi pasión es convertir ideas complejas en experiencias digitales fluidas y eficaces. ¡Estoy listo para elevar tus proyectos al próximo nivel!</span>			
 			</h2>	
 
-			<nav class="flex gap-x-4 mt-4">
+			<nav class="flex flex-wrap-reverse md:mx-auto gap-4 mt-6 md:mt-8">
 				<SocialPill href="https://www.linkedin.com/in/jose-rolando-giron-ramirez/">
-					<LinkedInIcon class="size-6 text-white" />
+					<LinkedInIcon class="size-4 md:size-6 text-white" />
 					LinkedIn
 				</SocialPill>
 
 				<SocialPill href="https://github.com/JRGironDev">
-					<GitHubIcon class="size-6 text-white" />
+					<GitHubIcon class="size-4 md:size-6 text-white" />
 					GitHub
 				</SocialPill>
 
-				<SocialPill href="https://github.com/JRGironDev">
-					<MailIcon class="size-6 text-white" />
+				<SocialPill href="mailito:joserobertoq@outlook.com">
+					<MailIcon class="size-4 md:size-6 text-white" />
 					joserobertoq@outlook.com
 				</SocialPill>
 			</nav>
@@ -58,10 +61,19 @@ import CodeIcon from '../components/icons/Code.astro';
 
 		<SectionContainer id="experiencia">
 			<h2 class="text-2xl font-semibold mb-8 text-white flex gap-x-3 items-center">
-				<CodeIcon class="size-8" />
+				<BriefCaseIcon class="size-8" />
 				Experiencia Laboral
 			</h2>
 			<Experience />
+		</SectionContainer>
+
+		<SectionContainer id="projectos">
+			<h2 class="text-2xl font-semibold mb-8 text-white flex gap-x-3 items-center">
+				<CodeIcon class="size-8" />
+				Projectos
+			</h2>
+			<Projects />
+			
 		</SectionContainer>
 	</main>
 </Layout>
