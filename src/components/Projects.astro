@@ -1,0 +1,56 @@
+---
+import BlazorIcon from './icons/Blazor.astro'
+import CSharpIcon from './icons/CSharp.astro'
+import TailwindIcon from './icons/Tailwind.astro'
+
+const TAGS = {
+    BLAZOR: {
+        name: 'Blazor',
+        class: 'border-white/10 bg-[#3c147c]/50 text-white/90',
+        icon: BlazorIcon
+    },
+    CSHARP: {
+        name: 'C#',
+        class: 'border-white/10 bg-[#3c0494]/50 text-white/90',
+        icon: CSharpIcon
+    },
+    TAILWIND: {
+        name: 'Tailwind CSS',
+        class: 'border-violet-200 bg-[#1cacbc]/50 text-white',
+        icon: TailwindIcon
+    },
+}
+
+const PROJECTS = [
+    {
+        title: 'GuateSeguro - Global Corredores de Seguros',
+        description: 'Página web para Global Corredores de Seguros en la cual los turistas en Guatemala pueden tener asistencia médica y en el camino garantizada por 15 días',
+        link: 'https://www.google.com',
+        image: '/projects/guateseguro.webp',
+        tags: [TAGS.BLAZOR, TAGS.CSHARP, TAGS.TAILWIND]
+    },
+]
+---
+
+{
+    PROJECTS.map(({title, description, link, image, tags }) => (
+        <article>
+            <h3 class="text-2xl font-semibold text-violet-400 mb-2">{title}</h3>
+            <p class="text-lg mb-4 text-pretty text-white/80">{description}</p>
+            <ul class="flex flex-wrap items-center gap-x-2 mb-4">
+                {tags.map((tag) => (
+                    <li>
+                        <span class={`flex items-center gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
+                            <tag.icon class="size-6" />
+                            {tag.name}
+                        </span>
+                    </li>   
+                ))}
+            </ul>
+            <img 
+                class="rounded shadow-2xl shadow-white/50"
+                src={image} 
+                alt={`Captura de pantalla del proyecto ${title}`} />
+        </article>
+    ))
+}
