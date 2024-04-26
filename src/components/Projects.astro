@@ -1,7 +1,10 @@
 ---
 import BlazorIcon from './icons/Blazor.astro'
 import CSharpIcon from './icons/CSharp.astro'
+import GitHubIcon from './icons/GitHub.astro'
 import TailwindIcon from './icons/Tailwind.astro'
+import LinkButton from './LinkButton.astro'
+import WebIcon from './icons/Web.astro'
 
 const TAGS = {
     BLAZOR: {
@@ -29,6 +32,15 @@ const PROJECTS = [
         image: '/projects/guateseguro.webp',
         tags: [TAGS.BLAZOR, TAGS.CSHARP, TAGS.TAILWIND]
     },
+    {
+        title: 'Dashboard de consumo de recursos IA',
+        description: 'Dashboard para monitorear el consumo de recursos de los modelos de IA en producción',
+        link: 'https://www.google.com',
+        image: '/projects/Dashboard.webp',
+        tags: [TAGS.BLAZOR, TAGS.CSHARP, TAGS.TAILWIND]
+
+    
+    }
 ]
 ---
 
@@ -51,6 +63,17 @@ const PROJECTS = [
                 class="rounded shadow-2xl shadow-white/50"
                 src={image} 
                 alt={`Captura de pantalla del proyecto ${title}`} />
+            <footer class="flex justify-end gap-x-4 mt-4">
+                <LinkButton href="">
+                    <GitHubIcon class="size-6"/>
+                    Ver código fuente
+                </LinkButton>
+
+                <LinkButton link="https://www.guateseguro.com/">
+                    <WebIcon class="size-6"/>
+                    Ver sitio web
+                </LinkButton>
+            </footer>
         </article>
     ))
 }
