@@ -28,7 +28,8 @@ const PROJECTS = [
     {
         title: 'GuateSeguro - Global Corredores de Seguros',
         description: 'Página web para Global Corredores de Seguros en la cual los turistas en Guatemala pueden tener asistencia médica y en el camino garantizada por 15 días',
-        link: 'https://www.google.com',
+        link: "https://www.guateseguro.com/",
+        gitHub: 'https://www.google.com',
         image: '/projects/guateseguro.webp',
         tags: [TAGS.BLAZOR, TAGS.CSHARP, TAGS.TAILWIND]
     },
@@ -38,14 +39,12 @@ const PROJECTS = [
         link: 'https://www.google.com',
         image: '/projects/Dashboard.webp',
         tags: [TAGS.BLAZOR, TAGS.CSHARP, TAGS.TAILWIND]
-
-    
     }
 ]
 ---
-
+<section class="flex flex-col gap-y-16">
 {
-    PROJECTS.map(({title, description, link, image, tags }) => (
+    PROJECTS.map(({title, description, link, image, tags, gitHub }) => (
         <article>
             <h3 class="text-2xl font-semibold text-violet-400 mb-2">{title}</h3>
             <p class="text-lg mb-4 text-pretty text-white/80">{description}</p>
@@ -64,12 +63,13 @@ const PROJECTS = [
                 src={image} 
                 alt={`Captura de pantalla del proyecto ${title}`} />
             <footer class="flex justify-end gap-x-4 mt-4">
-                <LinkButton href="">
+                {gitHub && <LinkButton href={gitHub}>
                     <GitHubIcon class="size-6"/>
                     Ver código fuente
                 </LinkButton>
-
-                <LinkButton link="https://www.guateseguro.com/">
+                }
+                
+                <LinkButton link={link}>
                     <WebIcon class="size-6"/>
                     Ver sitio web
                 </LinkButton>
@@ -77,3 +77,4 @@ const PROJECTS = [
         </article>
     ))
 }
+</section>
