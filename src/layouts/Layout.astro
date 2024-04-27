@@ -26,19 +26,15 @@ const { description, title } = Astro.props
   </head>
 
   <body class="relative text-black dark:text-white">
-	<div class="absolute top-0 -z-10 h-full w-full bg-white">
-		<div class="absolute bottom-auto left-auto right-0 top-0 h-[500px] w-[500px] -translate-x-[30%] translate-y-[20%] rounded-full bg-[rgba(173,109,244,0.5)] opacity-50 blur-[80px]"></div>
-	</div>
     <div
-      class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-50 light: dark:bg-gray-950
-      bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.5),rgba(255,255,255,0.9))]
-      dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
-    >
+      class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-violet-700/90 dark:bg-gray-950
+      bg-[radial-gradient(ellipse_90%_90%_at_50%_-20%,rgba(217,216,255,0.5),rgba(255,255,255,0.9))]
+      dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
     </div>
     <Header />
     <slot />
     <Footer />
-    <style is:global>
+    <style is:global> 
       :root {
         color-scheme: light dark;
       }
